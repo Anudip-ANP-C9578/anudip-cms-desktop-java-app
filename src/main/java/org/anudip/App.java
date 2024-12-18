@@ -1,10 +1,9 @@
 package org.anudip;
 
-/**
- * Hello world!
- */
+// Main class to initiate the application
 public class App {
-    public static void main(String[] args) {
-        System.out.println("Hello World!");
-    }
+	public static void main(String[] args) {
+		// Launching the SignIn Frame
+		new Frame();
+	}
 }
