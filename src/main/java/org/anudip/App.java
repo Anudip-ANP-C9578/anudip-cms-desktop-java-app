@@ -1,10 +1,9 @@
 package org.anudip;
 
-/**
- * Hello world!
- */
-public class App {
-    public static void main(String[] args) {
-        System.out.println("Hello World!");
-    }
+import org.anudip.frame.SignInFrame;
+
+public class App{
+public static void main(String[] args) {
+    new SignInFrame();
+}
 }
