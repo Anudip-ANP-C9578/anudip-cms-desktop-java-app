@@ -106,7 +106,7 @@ public class SignInFrame extends JFrame /* implements ActionListener */ {
 					} else {
 						JOptionPane.showMessageDialog(null, "Invalid Access. Try Again");
 					}
-					dao.closeConnection();
+					dao.closeDBConnection();
 				} catch (Exception ex) {
 					ex.printStackTrace();
 				}
