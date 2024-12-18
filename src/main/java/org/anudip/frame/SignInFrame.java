@@ -1,6 +1,6 @@
 package org.anudip.frame;
 
-import org.anudip.dao.employeeDAO;
+import org.anudip.dao.EmployeeDAO;
 
 import java.awt.*;
 import java.awt.event.ActionEvent;
@@ -79,7 +79,7 @@ public class SignInFrame extends JFrame implements ActionListener {
     
     @Override
     public void actionPerformed(ActionEvent e) {
-        employeeDAO employeeDAO = new employeeDAO(); // Initialize DAO
+        EmployeeDAO employeeDAO = new EmployeeDAO(); // Initialize DAO
 
         if (e.getSource() == jButton1) { // SignIn button clicked
             String emailId = tfUserName.getText();
@@ -104,7 +104,7 @@ public class SignInFrame extends JFrame implements ActionListener {
                 this.dispose();
                 
                 // Open EmployeeDashboard window
-                new employeeDashboardFrame(employeeName);
+                new EmployeeDashboardFrame(employeeName);
             } else {
                 JOptionPane.showMessageDialog(this,
                         "Invalid Email ID or Password. Try Again.",

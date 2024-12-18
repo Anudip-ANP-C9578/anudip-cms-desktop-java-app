@@ -3,10 +3,10 @@ package org.anudip.frame;
 import javax.swing.*;
 import java.awt.*;
 
-public class employeeDashboardFrame extends JFrame {
+public class EmployeeDashboardFrame extends JFrame {
     private JLabel welcomeLabel;
 
-    public employeeDashboardFrame(String employeeName) {
+    public EmployeeDashboardFrame(String employeeName) {
         setTitle("Employee Dashboard");
         setSize(500, 300);
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);

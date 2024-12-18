@@ -1,6 +1,6 @@
 package org.anudip.entity;
 
-public class employeeEntity {
+public class EmployeeEntity {
     private int id;
     private String first_name;
     private String last_name;
@@ -8,9 +8,9 @@ public class employeeEntity {
     private String password;
 
     // Constructor
-    public employeeEntity() {}
+   
 
-    public employeeEntity(int id, String first_name, String last_name, String email_address, String password) {
+    public EmployeeEntity(int id, String first_name, String last_name, String email_address, String password) {
         this.id = id;
         this.first_name = first_name;
         this.last_name = last_name;

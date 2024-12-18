@@ -1,14 +1,14 @@
 package org.anudip.dao;
 
-import org.anudip.entity.employeeEntity;
+import org.anudip.entity.EmployeeEntity;
 import java.sql.*;
 
-public class employeeDAO {
+public class EmployeeDAO {
     private Connection dbConn = null;
     private Statement dbStmt = null;
 
     // Constructor to initialize the database connection
-    public employeeDAO() {
+    public EmployeeDAO() {
         try {
             // Load MySQL JDBC Driver
             Class.forName("com.mysql.cj.jdbc.Driver");
