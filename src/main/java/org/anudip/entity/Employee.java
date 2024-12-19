@@ -1,4 +1,4 @@
-package org.anudip;
+package org.anudip.entity;
 
 //entity class
 public class Employee {
@@ -62,6 +62,7 @@ public class Employee {
 		this.password = password;
 	}
 
+	// Overriding method
 	@Override
 	public String toString() {
 		return "Employee [employeeID=" + employeeID + ", firstName=" + firstName + ", lastName=" + lastName

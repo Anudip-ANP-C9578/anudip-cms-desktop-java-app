@@ -1,4 +1,4 @@
-package org.anudip;
+package org.anudip.frame;
 
 import java.awt.Container;
 import java.awt.GridBagConstraints;
@@ -10,6 +10,9 @@ import javax.swing.JButton;
 import javax.swing.JFrame;
 import javax.swing.JPanel;
 import javax.swing.JTextField;
+
+import org.anudip.dao.EmployeeDao;
+
 import javax.swing.JLabel;
 import javax.swing.JOptionPane;
 import javax.swing.*;
@@ -21,11 +24,11 @@ public class MainFrame extends JFrame implements ActionListener {
 	JButton btnSignIn, btnClear;
 
 	public MainFrame() {
-		setTitle("SignIn - Anudip CMS System"); //Title name of frame
+		setTitle("SignIn - Anudip CMS System"); // Title name of frame
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-		setSize(400, 300); //size of the frame
+		setSize(400, 300); // size of the frame
 
-		JPanel panel = new JPanel();
+		JPanel panel = new JPanel(); // creating Panel
 
 		GridBagLayout gridBagLayout = new GridBagLayout();
 		panel.setLayout(gridBagLayout);
@@ -88,6 +91,7 @@ public class MainFrame extends JFrame implements ActionListener {
 				JOptionPane.showMessageDialog(this, "Welcome " + employeeName + "!", "LogIn Successful",
 						JOptionPane.INFORMATION_MESSAGE);
 				this.dispose();
+
 				// Open the employee dashboard after successful login
 				new EmployeeDashboardFrame(employeeName);
 			} else {

@@ -1,4 +1,4 @@
-package org.anudip;
+package org.anudip.frame;
 
 import javax.swing.JFrame;
 import javax.swing.JLabel;
