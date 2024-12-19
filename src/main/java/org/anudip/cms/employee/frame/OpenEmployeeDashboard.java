@@ -17,7 +17,7 @@ public class OpenEmployeeDashboard extends JFrame {
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         
         // Welcome Label
-        JLabel welcomeLabel = new JLabel("Welcome to the Employee Dashboard, " + first_name + " " + last_name + "!");
+        JLabel welcomeLabel = new JLabel("Welcome to Employee Dashboard, " + first_name + " " + last_name + "!!");
         welcomeLabel.setHorizontalAlignment(SwingConstants.CENTER);
         
         // Add Components
