@@ -4,11 +4,12 @@ import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
-import java.sql.Statement;
 import java.sql.SQLException;
+import java.sql.Statement;
 
-public class EmployeeDao {
+import org.anudip.entity.Student;
 
+public class StudentDao {
 	private Connection dbConn = null;
 	private Statement dbStmt = null;
 
@@ -79,32 +80,32 @@ public class EmployeeDao {
 		}
 	}
 
-	// Method to verify the credentials are matching or not
-	public String validateCredentials(String email, String password) {
-		String employeeName = null;
+	public boolean insertStudent(Student student) {
+		boolean status = false;
 
 		// To create database connection if it is not connected
+
 		if (dbConn == null) {
-			createDBConnection();
+			dbConn = createDBConnection();
 		}
 
-		// SQL query to select first name and last name
-		String query = "SELECT first_name, last_name FROM employee WHERE email_id = ? AND password = ?";
+		String sqlQuery = "INSERT INTO student (first_name, last_name, date_of_birth, gender) VALUES (?, ?, ?, ?)";
 
-		try (PreparedStatement pstmt = dbConn.prepareStatement(query)) {
-			pstmt.setString(1, email);
-			pstmt.setString(2, password);
+		try (PreparedStatement pstmt = dbConn.prepareStatement(sqlQuery)) {
+			pstmt.setString(1, student.getFirstName());
+			pstmt.setString(2, student.getLastName());
+			pstmt.setString(3, student.getDateOfBirth());
+			pstmt.setString(4, student.getGender());
 
-			ResultSet dbRs = pstmt.executeQuery();
-			if (dbRs.next()) {
-				// Concatenate first and last names
-				employeeName = dbRs.getString("first_name") + " " + dbRs.getString("last_name");
+			int rowsAffected = pstmt.executeUpdate();
+			if (rowsAffected > 0) {
+				status = true;
 			}
 		} catch (SQLException sqlEx) {
 			sqlEx.printStackTrace();
+		} finally {
+			closeDBConnection();
 		}
-
-		// Return the name or null if validation fails
-		return employeeName;
+		return status;
 	}
 }

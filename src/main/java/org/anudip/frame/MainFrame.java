@@ -24,9 +24,9 @@ public class MainFrame extends JFrame implements ActionListener {
 	JButton btnSignIn, btnClear;
 
 	public MainFrame() {
-		setTitle("SignIn - Anudip CMS System"); // Title name of frame
-		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+		setTitle("SignIn - Anudip Foundation Content Management System"); // Title name of frame
 		setSize(400, 300); // size of the frame
+		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 
 		JPanel panel = new JPanel(); // creating Panel
 
@@ -35,6 +35,7 @@ public class MainFrame extends JFrame implements ActionListener {
 
 		GridBagConstraints gridBagConstraints = new GridBagConstraints();
 
+		// creating components
 		lblEmailId = new JLabel("Email ID");
 		tfEmailId = new JTextField(10);
 
@@ -71,8 +72,7 @@ public class MainFrame extends JFrame implements ActionListener {
 		btnSignIn.addActionListener(this);
 		btnClear.addActionListener(this);
 
-		Container container = getContentPane();
-		container.add(panel);
+		getContentPane().add(panel);
 		setVisible(true);
 	}
 
@@ -90,10 +90,10 @@ public class MainFrame extends JFrame implements ActionListener {
 
 				JOptionPane.showMessageDialog(this, "Welcome " + employeeName + "!", "LogIn Successful",
 						JOptionPane.INFORMATION_MESSAGE);
-				this.dispose();
 
 				// Open the employee dashboard after successful login
 				new EmployeeDashboardFrame(employeeName);
+				this.dispose();
 			} else {
 				JOptionPane.showMessageDialog(this, "Invalid Access. Try Again", "LogIn Failed",
 						JOptionPane.ERROR_MESSAGE);
